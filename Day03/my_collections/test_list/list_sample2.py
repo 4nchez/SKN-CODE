@@ -88,4 +88,36 @@ def list_reverse():
     return
 
 # sort() : 리스트의 저장 값들을 오름차순정렬 처리함
-# 
+# 주의 : 한 가지 종류의 값들로만 저장되어 있을 때 사용할 수 있음
+def list_sort():
+    # lst.sort() # TypeError: '<' not supported between instances of 'str' and 'float'
+    
+    lst_int = [42, 2, 52, 222, -5, 66, 1, 0]
+    print(f'before sort : {lst_int}')
+    lst_int.sort() # 기본 오름차순정렬임 (1234순, abcd순, 가나다라순)
+    print(f'after sort : {lst_int}')
+    lst_int.sort(reverse=True) # 내림차순정렬, reverse=False 기본값으로 생략함
+    print(f'after sort : {lst_int}')
+    
+    lst_str = ['orange', 'apple', 'melon', 'banana', 'kiwi']
+    print(f'before sort : {lst_str}')
+    lst_str.sort() # 기본 오름차순정렬임 (1234순, abcd순, 가나다라순)
+    print(f'after sort : {lst_str}')
+    lst_str.sort(reverse=True) # 내림차순정렬, reverse=False 기본값으로 생략함
+    print(f'after sort : {lst_str}')
+    
+    lst_kr = ['파이썬', '데이터베이스', '웹크롤링', '데이터처리', '데이터분석', '초거대언어모델']
+    print(f'before sort : {lst_kr}')
+    lst_kr.sort() # 기본 오름차순정렬임 (1234순, abcd순, 가나다라순)
+    print(f'after sort : {lst_kr}')
+    lst_kr.sort(reverse=True) # 내림차순정렬, reverse=False 기본값으로 생략함
+    print(f'after sort : {lst_kr}')
+    
+    return
+
+# count() : 리스트에 저장된 같은 값의 갯수 조회
+# 리스트변수.count(찾을값)
+def list_count():
+    print(f'lst : {lst}')
+    print(f'lst 에 저장된 정수 1의 갯수 : {lst.count(1)}')
+    return

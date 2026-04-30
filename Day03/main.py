@@ -36,6 +36,7 @@ if __name__=='__main__':
     print('프로그램 종료 : main 이 끝남 ===========================')
 '''
 
+'''
 import my_collections.test_list.list_sample2 as ls2
 
 if __name__=='__main__':
@@ -48,6 +49,16 @@ if __name__=='__main__':
     # ls2.list_insert()
     # ls2.list_pop()
     # ls2.list_extend()
-    ls2.list_reverse()
+    # ls2.list_reverse()
+    # ls2.list_sort()
+    ls2.list_count()
     
     print('program exit ---------------------------------')
+'''
+
+import my_collections.test_list.list_mission1 as p
+
+if __name__=="__main__":
+    p.practice()
+    p.practice_1()
+    p.practice_2()
