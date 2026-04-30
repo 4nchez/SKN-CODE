@@ -36,8 +36,10 @@ if __name__=='__main__':
     print('프로그램 종료 : main 이 끝남 ===========================')
 '''
 
-'''
 import my_collections.test_list.list_sample2 as ls2
+import my_collections.test_list.list_mission1 as lm1
+import my_collections.test_list.list_mission2 as lm2
+import my_collections.test_tuple.tuple_sample as ts
 
 if __name__=='__main__':
     print('program start ---------------------------------')
@@ -51,14 +53,23 @@ if __name__=='__main__':
     # ls2.list_extend()
     # ls2.list_reverse()
     # ls2.list_sort()
-    ls2.list_count()
+    # ls2.list_count()
+
+    # lm1.practice()
+    # lm1.practice_1()
+    # lm1.practice_2()
+        
+    # ts.make_tuple()
+    # ts.tuple_indexing()
+    # ts.tuple_caution()
+    # 튜플이 반환되는 경우 (리턴시 값을 가지고 온다면)
+    # a, b = ts.tuple_caution()
+    # print(f'a : {a} , b : {b} , type : {type(a)}, {type(b)}')
+    
+    # result = ts.tuple_caution()
+    # print(f'result : {result} , type : {type(result)}')
+    # ts.tuple_builtin()
+    
+    lm2.practice()
     
     print('program exit ---------------------------------')
-'''
-
-import my_collections.test_list.list_mission1 as p
-
-if __name__=="__main__":
-    p.practice()
-    p.practice_1()
-    p.practice_2()
