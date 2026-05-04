@@ -62,7 +62,7 @@ def test_fwrite3():
 # os 모듈이 제공하는 함수 사용함
 def test_osmodule():
     # 사용 중인 컴퓨터의 사용자계정(컴퓨터이름) 조회
-    # print(os.getlogin())
+    print(os.getlogin())
     # 현재 작업 디렉토리 조회
     print(os.getcwd())
 
@@ -83,6 +83,33 @@ def test_osmodule():
     확인함'''
     f.write(st)
     f.close()
+    
+    # 시스템 환경변수, 디렉토리, 파일 다루기
+    # listdir() : 현재 작업 디렉토리 안의 파일들과 하위 디렉토리 목록 조회
+    print(os.listdir(os.getcwd()))
+    print(os.listdir('.')) # '.' : 현재 디렉토리를 의미함
+    print(os.listdir('../')) # '../' : 상위 디렉토리를 의미함
+    
+    # rename(): 디렉토리나 파일의 이름 바꾸기함
+    os.rename('testa.txt', 'samplea.txt')
+    
+    # path.exists() : 파일이나 디렉토리의 존재 여부 확인
+    print(os.path.exists('example.txt')) # 파일이 없으면 False
+    print(os.path.exists('sample.txt')) # 파일이 있으면 True
+    
+    # path.abspath() : 파일이나 디렉토리의 절대경로 조회
+    print(os.path.abspath('sample.txt'))
+    
+    # path.basename(), dirname(), split() : 파일명, 경로명, 두 개 분리
+    current_path = os.path.abspath('sample.txt')
+    print('current_path : ', current_path)
+    print('basename : ', os.path.basename(current_path)) # 파일명.확장자 추출
+    print('dirname : ', os.path.dirname(current_path)) # 경로명만 추출
+    print('split : ', os.path.split(current_path)) # ('경로명', '파일명.확장자')
+
+    # path.splitdrive(), splittext() : 경로에서 드라이브명만, 확장자만 추출
+    print(os.path.splitdrive(current_path)) # ('드라이브명', '나머지경로') 분리
+    print(os.path.splitext(current_path)) # ('경로명과파일명', '.확장자') 분리
 # ------------------------------------------
 
 # 4. r(rt : read text) : 읽기 전용

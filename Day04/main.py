@@ -5,6 +5,7 @@
 
 import fileio_sample.fileio_module as fs
 import loop.while_sample as lw
+import fileio_sample.fileio_module2 as fs2
 
 # CLI 방식의 메뉴 출력용 함수
 def menu():
@@ -22,6 +23,8 @@ def menu():
     9. 메뉴 끝내기
     10. 파일 내용 줄단위로 리스트에 저장하기
     11. 컬렉션 아이템들을 파일에 저장하기
+    12. 이진 데이터로 파일에 저장하기
+    13. 파일로 부터 이진 데이터 읽어오기
     '''
         
     while True:
@@ -52,6 +55,10 @@ def menu():
             fs.test_fread2()
         elif no == 11:
             fs.test_writelines()
+        elif no == 12:
+            fs2.test_binary_fileio()
+        elif no == 13:
+            fs2.test_binary_fileio2()
         else:
             break
     # while end -----------------
