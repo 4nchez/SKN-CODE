@@ -5,7 +5,7 @@
 # 파이썬에서의 파일입출력
 # open() -> write() or read() -> close()
 '''
-파일변수 = open('디렉토리명/파일명.확장자', '열기모드')
+파일변수 = open('디렉터리명/파일명.확장자', '열기모드')
 파일입출력의 기본은 텍스트(문자) 파일 입출력임
 열기모드 : 
 w(wt), x(xt) : 새로 쓰기
@@ -32,12 +32,12 @@ def test_fwrite():
     f.write('★★★★★★★★★★★★★★★★★★★★★') # 문자인코딩이 달라서 한글과 기호문자가 깨짐
     f.close()
     
-    # os 모듈을 활용하면 현재 작업 중인 디렉토리 경로를 확인하고 이용할 수 있음
+    # os 모듈을 활용하면 현재 작업 중인 디렉터리 경로를 확인하고 이용할 수 있음
     print(os.getcwd()) # current wroking directory
     return
 # -------------------------------------------------------------------
 
-# 2. 원하는 디렉토리(폴더)에 파일을 만들려면
+# 2. 원하는 디렉터리(폴더)에 파일을 만들려면
 # open() 함수 첫번째 전달인자(전달값(argument) : 함수의 매개변수(parameter)에게 전달되는 값)에
 # 전체경로명과 파일명을 함께 입력하면 됨 => 주의 : 백슬러시(\) 이스케이프 문자를 반드시 2개 표기해야 함
 def test_fwrite2():
@@ -58,46 +58,46 @@ def test_fwrite3():
     f.close()
 # ----------------------------------------------
 
-# 3. 파이썬에서 파일이나 디렉토리 다루기
+# 3. 파이썬에서 파일이나 디렉터리 다루기
 # os 모듈이 제공하는 함수 사용함
 def test_osmodule():
     # 사용 중인 컴퓨터의 사용자계정(컴퓨터이름) 조회
     print(os.getlogin())
-    # 현재 작업 디렉토리 조회
+    # 현재 작업 디렉터리 조회
     print(os.getcwd())
 
     system_user = os.getlogin()
     work_dir = './' + str(system_user) + '/chdir'
-    # 디렉토리 만들기 : os.mkdir('만들 디렉토리경로와 디렉토리명')
-    os.mkdir(work_dir) # 주의 : 같은 이름의 디렉토리가 있으면 에러남
+    # 디렉터리 만들기 : os.mkdir('만들 디렉터리경로와 디렉터리명')
+    os.mkdir(work_dir) # 주의 : 같은 이름의 디렉터리가 있으면 에러남
     
-    # 작업 디렉토리 변경하기 : os.chdir('변경할 디렉토리명')
+    # 작업 디렉터리 변경하기 : os.chdir('변경할 디렉터리명')
     os.chdir(work_dir)
     print(os.getcwd()) # 확인
     
-    # 변경한 디렉토리에 파일 저장
+    # 변경한 디렉터리에 파일 저장
     f = open('sample.txt', 'w', encoding='UTF-8')
-    f.write('파이썬으로 디렉토리 만들고, 만든 디렉토리에 파일 생성해서 저장함\n')
-    st = '''변경된 디렉토리에 파일 생성하고
+    f.write('파이썬으로 디렉터리 만들고, 만든 디렉터리에 파일 생성해서 저장함\n')
+    st = '''변경된 디렉터리에 파일 생성하고
     유니코드로 인코딩된 문자열을 기록 저장
     확인함'''
     f.write(st)
     f.close()
     
-    # 시스템 환경변수, 디렉토리, 파일 다루기
-    # listdir() : 현재 작업 디렉토리 안의 파일들과 하위 디렉토리 목록 조회
+    # 시스템 환경변수, 디렉터리, 파일 다루기
+    # listdir() : 현재 작업 디렉터리 안의 파일들과 하위 디렉터리 목록 조회
     print(os.listdir(os.getcwd()))
-    print(os.listdir('.')) # '.' : 현재 디렉토리를 의미함
-    print(os.listdir('../')) # '../' : 상위 디렉토리를 의미함
+    print(os.listdir('.')) # '.' : 현재 디렉터리를 의미함
+    print(os.listdir('../')) # '../' : 상위 디렉터리를 의미함
     
-    # rename(): 디렉토리나 파일의 이름 바꾸기함
+    # rename(): 디렉터리나 파일의 이름 바꾸기함
     os.rename('testa.txt', 'samplea.txt')
     
-    # path.exists() : 파일이나 디렉토리의 존재 여부 확인
+    # path.exists() : 파일이나 디렉터리의 존재 여부 확인
     print(os.path.exists('example.txt')) # 파일이 없으면 False
     print(os.path.exists('sample.txt')) # 파일이 있으면 True
     
-    # path.abspath() : 파일이나 디렉토리의 절대경로 조회
+    # path.abspath() : 파일이나 디렉터리의 절대경로 조회
     print(os.path.abspath('sample.txt'))
     
     # path.basename(), dirname(), split() : 파일명, 경로명, 두 개 분리
