@@ -1,12 +1,12 @@
 # path : ./class_oop2.py
 # oop 에서의 연산자 오버로딩 (operator overloading)
 
-# 오버로딩 : 클래스 안에서 이름이 같은 메소드 중복 작성(정의)
-# 파이썬에서는 생성자와 메소드는 오버로딩 안 됨 => 작성은 할 수 있으나, 마지막에 작성된 것으로 덮어쓰기됨
+# 오버로딩 : 클래스 안에서 이름이 같은 메서드 중복 작성(정의)
+# 파이썬에서는 생성자와 메서드는 오버로딩 안 됨 => 작성은 할 수 있으나, 마지막에 작성된 것으로 덮어쓰기됨
 # C++, Python 에서는 값 계산에 사용되는 연산자를 객체 간의 연산으로 재정의할 수 있음
 # 연산자 : 값 계산에 사용되는 기호
 # 객체 간의 연산은 불가능함
-# 클래스 안에 연산자와 관련된 예약어를 사용해서, 객체 간의 연산이 가능하도록 기존 연산자에 대한 메소드를 추가 작성하는 것
+# 클래스 안에 연산자와 관련된 예약어를 사용해서, 객체 간의 연산이 가능하도록 기존 연산자에 대한 메서드를 추가 작성하는 것
 
 '''
 객체와 객체간 연산과 객체와 값의 연산이 있음
@@ -38,7 +38,7 @@
     
 시퀀스나 맵 타입에 대해서도 연산자 오버로딩 가능함
 
-타입 변환 관련 메소드 오버로딩
+타입 변환 관련 메서드 오버로딩
 __int__(self):
     return int(self.필드명)
     
@@ -57,21 +57,21 @@ class OOP:
     def __init__(self, num):
         self.__num = num
 
-    # 연산자 오버로딩 메소드 추가
+    # 연산자 오버로딩 메서드 추가
     def __add__(self, value):
-        '+ 연산자를 메소드로 오버로딩 처리'
+        '+ 연산자를 메서드로 오버로딩 처리'
         return self.__num + value
     
     def __sub__(self, value):
-        '- 연산자를 메소드로 오버로딩 처리'
+        '- 연산자를 메서드로 오버로딩 처리'
         return self.__num - value
     
     def __mul__(self, value):
-        '* 연산자를 메소드로 오버로딩 처리'
+        '* 연산자를 메서드로 오버로딩 처리'
         return self.__num * value
     
     def __truediv__(self, value):
-        '/ 연산자를 메소드로 오버로딩 처리'
+        '/ 연산자를 메서드로 오버로딩 처리'
         return self.__num / value
     
     # getter
@@ -134,7 +134,7 @@ class MyList:
     def __getitem__(self, index): # [index] 인덱싱 연산자 오버로딩
         return self.data[index]
 
-    def __str__(self): # 자바의 toString() 같은 메소드임
+    def __str__(self): # 자바의 toString() 같은 메서드임
         return str(self.data)
 # class MyList ---------------------------------
 

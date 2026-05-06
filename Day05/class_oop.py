@@ -16,11 +16,11 @@ field(멤버 변수), method(멤버 함수), constructor(생성자), destructor 
 # 파이썬에서는 기본적으로 클래스 안의 모든 멤버는 public 임
 # 클래스를 자료형(type)으로 만든 변수 == 레퍼런스 변수라고 함 : 클래스로 만들어진 객체의 주소를 가짐
 # 레퍼런스, 필드명, 클래스명.필드명
-# 레퍼런스.메소드명, 클래스명.메소드명()
+# 레퍼런스.메서드명, 클래스명.메서드명()
 
 # private : 클래스 밖에서 사용(접근) 못 함, 클래스 안에서만 사용(접근)할 수 있음
 # 파이썬에서 클래스 멤버를 비공개(private) 처리하려면,
-# 필드명이나 메소드명 이름 앞에 '_'(underscore)를 2개 붙이면 됨
+# 필드명이나 메서드명 이름 앞에 '_'(underscore)를 2개 붙이면 됨
 
 class PClass:
     # field (private)
@@ -104,11 +104,11 @@ print('v1 : ', v1.get_number(), id(v1))
 # v2.set_number(int(input('v2가 참조하는 객체의 필드값 변경하세요 : ')))
 # print('v2 : ', v2.get_number(), id(v2))
 
-# 정적 메소드 (static method) --------------------------------
-# 프로그램 실행시 정적 메모리(static)에 따로 기록되는 메소드를 말함
-# 메소드 작성시 메소드 이름 위에 장식자(decorator == 어노테이션 : annotation)를 표시하면 됨
+# 정적 메서드 (static method) --------------------------------
+# 프로그램 실행시 정적 메모리(static)에 따로 기록되는 메서드를 말함
+# 메서드 작성시 메서드 이름 위에 장식자(decorator == 어노테이션 : annotation)를 표시하면 됨
 # @staticmethod
-# self가 없는 메소드임 => 메소드 사용 : 클래스명.메소드()
+# self가 없는 메서드임 => 메서드 사용 : 클래스명.메서드()
 
 class C:
     def ham(self, x, y): # self가 자동으로 주소를 전달받음
@@ -120,7 +120,7 @@ class D:
         print('static or class method : ', x, y)
 
 # static method 는 사용시 객체 레퍼런스(인스턴스의 주소) 없이 실행함 => self 가 없음
-# 클래스명.메소드(전달값)
+# 클래스명.메서드(전달값)
 D.spam(100, 200)
 
 # static method 를 instance method 처럼 사용해도 됨
