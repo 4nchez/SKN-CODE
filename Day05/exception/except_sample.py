@@ -97,7 +97,71 @@ def test_finally():
         print('원 면적 : ', math.pi * math.pow(radius, 2))
     finally: # 반드시 실행해야 되는 구문 작성 영역
         print('예외 처리 구문 종료함')
+# 여기 서부터 2026-05-07
+    # try 구동 --> 에러 발생 --> except --> finally
+    # try 구동 --> 정상 작동 --> else --> finally
+  
+# 파이썬에서의 예외 처리 구문 조합 형태
+# try: ~ except: ~
+# try: ~ except: ~ else : ~
+# try: ~ finally: ~
+# try: ~ except: ~ finally: ~
+# try: ~ except: ~ else : ~ finally: ~
+# 잘못 사용된 경우 : try: ~ else: ~
 
+# def test_except():
+#     'try: ~ else: ~ 로 잘못 사용된 경우 테스트 함수'
+#     try:
+#         print('try area....')
+#     else: # SyntaxError: expected 'except' or 'finally' block
+#         print('else area....')
+
+# -----------------------------------------------------------
+# try 쪽에서 여러 종류의 에러가 발생할 경우
+# except 에서 에러 종류별로 예외 처리를 하고자 한다면 except: 여러 개 사용할 수 있음(갯수 제한 없음)
+# except 에러종류이름: 또는 except 에러정류이름 as 변수명:
+# 주의 사항 : 에러클래스의 상속 계층 구조에 따라 하위(후손) 클래스를 먼저 작성할 것 (다형성 때문임)
+
+def multi_except():
+    '다중 except 사용 테스트 함수'
+    try:
+        # print(3 / 0)
+        lst = []
+        # print(lst[0])
+        # lst.append(int(input('숫자 입력 :')))
+        # print(lst)
+        print('2' + 4)
+        
+    except ZeroDivisionError:
+        print('0으로 나눌 수 없습니다.')
+    except IndexError:
+        print('리스트 인덱스 잘못 사용됨')
+    except TypeError:
+        print('계산식 오류')
+    except Exception as e:
+        print('에러가 발생함 : ', e)
+
+# 예외를 강제로 발생시키기 -------------------------------------
+# raise 예외클래스명 또는 raise 예외클래스명('에러 메시지')
+# 주로 함수나 클래스 메소드 작성시에 이용함
+# 코드상 지정하는 조건일 때 에러 발생시키고, 해당 함수를 사용하는 위치에서 예외 처리함
+def ndiv(a, b):
+    if b == 0:
+        raise Exception('0 나누기 못 함')
+    return a / b
+
+# ndiv() 함수를 사용하는 위치에서 예외 처리함
+def test_ndiv():
+    '예외 발생 구문이 있는 함수 사용 테스트'
+    try:
+        # 예외 발생 구문이 들어 있는 함수를 실행
+        result = ndiv(2, 3)
+        print(result)
+        result = ndiv(12, 0)
+        print(result)
+    except Exception as e:
+        print(e)
+# 여기 까지 2026-05-07
 
 # 실행 테스트
 if __name__=='__main__':
@@ -105,4 +169,7 @@ if __name__=='__main__':
     # test_input_error()
     # test_input_error2()
     # except_pass()
-    test_finally()
+    # test_finally()
+    # test_except()
+    # multi_except()
+    test_ndiv()
