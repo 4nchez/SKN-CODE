@@ -89,9 +89,9 @@ def check_login(email: str, password: str) -> tuple[bool, str]:
     '''
     users_df = load_users()
     
-    # 입력값 앞뒤 공백 제거 - TODO 굳이 할 필요가 있는가?
-    email = email.strip()
-    password = password.strip()
+    # 입력값 앞뒤 공백 제거
+    # email = email.strip()
+    # password = password.strip()
     
     # email 과 password 가 모두 일치하는지 검사
     matched = users_df[(users_df['email'] == email) & (users_df['password'] == password)]
@@ -147,9 +147,9 @@ def show_login_page() -> None:
         if st.session_state.show_login_error:
             login_error_dialog()
         
-        # TODO 굳이 할 필요가 있는가? 
-        with st.expander('테스트 계정 보기'):
-            st.code('admin@example.com/1234\nstudent@example.com/pass123\nteacher@example.com/teach123')
+        # 숨기기
+        # with st.expander('테스트 계정 보기'):
+        #     st.code('admin@example.com/1234\nstudent@example.com/pass123\nteacher@example.com/teach123')
 # -------------------------------------------
 
 # 7. 업로드 csv 데이터 파일 읽기 함수

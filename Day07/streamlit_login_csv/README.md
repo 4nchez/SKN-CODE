@@ -3,9 +3,9 @@
 ## 로그인을 위한 테스트 계정
 |email | password |
 |--|--|
-|admin@example.com| 1234 |
-|student@example.com| pass123|
-|teacher@example.com| teach123|
+|admin@example.com| ****** |
+|student@example.com| ******|
+|teacher@example.com| ******|
 
 ## 실행
 ```
